@@ -1,0 +1,442 @@
+/*body {
+    padding-top: 60px;
+}
+
+.formLogin {
+    width: 200px;
+    margin:auto; /*permet de centrer*/
+/*}
+
+.EnTete_tab_frais{
+    
+    background-color: cyan ;
+}*/
+
+/*coloration sur tous les tableaux d'une lihne sur deux en rouge' */
+/*
+table tr:nth-child(odd){
+  background-color:red;
+} */
+
+div[title="filtrage"]{
+  margin-top : 10px;
+  border:#1585dc 2px solid;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.btnFiltrage{   
+    background-color: #1585dc;
+    border-radius: 10px;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    /*width: 25%;*/
+}
+
+h3.frais{
+    color: #0174DF; /*bleu*/
+    margin: 30px;
+    font-weight: bold;
+}
+tr.afficheFHF{
+    
+    /*background-color: #D8D8D8;*/
+}
+
+nav{
+    margin-top: 0;
+}
+
+/* Ne concerne que les header avec un titre formlogin */
+header[title="formlogin"]{
+    
+    height: 200px;
+    /*marge par rapport aux éléments extérieurs */
+    margin-top: 30px;
+    margin-bottom: 0px; /*Pour coller au menu*/
+    /*lien vers l'image choisie'*/
+    background-image: url("../img/med2.jpg");
+    /* Positionne et montre le haut de l'image' */
+    background-origin: content-box;
+    background-position: top;
+    /*l'image ne se répète pas' */
+    background-repeat: no-repeat;
+    /*l'image couvre le header' */
+    background-size: 100% auto;
+    /*border: solid #080808 1px;*/
+   
+}
+
+header[title="listevisiteur"]{
+    
+    height: 200px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    background-image: url("../img/med2.jpg");
+    /* positionne et montre le bas de l'image'  */
+    background-origin: content-box;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+   
+}
+header[title="recapitulatifdesaffectations"]{
+    
+    height: 200px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    background-image: url("../img/med2.jpg");
+    /* positionne et montre le bas de l'image'  */
+    background-origin: content-box;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+   
+}
+
+header[title="saisirFF"], header[title="home"]{
+    
+    height: 200px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    background-image: url("../img/med2.jpg");
+    /* positionne et montre le bas de l'image'  */
+    background-origin: content-box;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+   
+   
+}
+
+footer{
+    
+    height: 30px;
+    margin-bottom: 50px;
+    /*background-image: url("../img/med1.jpg");
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;*/
+    text-align: right;
+    font-weight: bold;
+    border: 1px #1585dc solid;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+div#accueil{
+    
+    /*background-image: url("../img/fond.jpg");*/
+    /* positionne et montre le bas de l'image'  */
+    /*background-origin: content-box;
+    background-position: bottom;*/
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+div.stack{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1.5rem;
+}
+
+div#accueil_1{
+    /*display: inline-block;*/
+    background-color: #81C9F4;
+    /*width: 33%;*/
+    height: 600px;
+    text-align: justify;
+    color: white;
+    padding-bottom: 100px;
+    vertical-align: top;
+    margin-top :30px;
+    overflow-y: scroll;
+    
+}
+div#accueil_2{
+     /*display: inline-block;*/
+     background-color:  #FBF5EF;
+     /*width: 33%;*/
+     height: 600px;
+     vertical-align: top;     
+     text-align: justify;
+     margin-top : 30px;
+     overflow-y: scroll;
+}
+div#accueil_3{
+   
+    /*display: inline-block;*/
+    height: 600px;
+    background-color: #81C9F4;
+    /*width: 33%;*/
+   
+    color: white;
+    /*vertical-align: top;     /* Tous deux alignés en haut */
+    text-align: justify;
+    /*overflow-y:scroll;*/
+
+    overflow-y: scroll;
+    margin-top : 30px;
+    
+}
+
+h5#h5accueil_3{
+    
+    /*margin-left: 20% ;*/
+    text-align: center;
+}
+
+h5.accueil_1_titre{
+   
+    /*margin-left: 20% ;*/
+    text-align: center;
+    margin-top: 20px;
+    
+}
+
+p.p_accueil{
+    
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right : 15px;
+        
+        
+    
+}
+
+#photo_2      /* propriétés de la photo */
+{
+    /*margin : auto; */
+    width: 200px;
+    height: 150px;
+    border: 1px solid white;
+    
+    /*margin-left : 25%;*/
+    margin-bottom : 30px;
+    margin-top: 20px;
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#photo_3      /* propriétés de la photo */
+{
+    /*margin : auto; */
+    width: 250px;
+    height: 150px;
+    /*border: 1px solid white;*/
+    margin-top: 5px;
+    margin-right: 5px;
+    float: left;
+   
+
+    
+}
+
+footer[title="copyright"]{
+    margin-top: 30px;
+    color: #1585dc;
+    font-family: fantasy;
+}
+
+p[title="tabvisiteur"]{
+    margin-top: 20px;
+    color: #1585dc;
+    font-family: fantasy;
+    margin-bottom: 20px;
+}
+
+thead[title="entetetabvisiteur"]{
+    background-color: #FAAC58; /*orange*/
+    color: white;
+}
+
+.ligneTabVisitColor{
+    
+    background-color: #F7F8E0;
+    
+}
+/*img{
+    width: 100%;
+    max-height: 200px;
+}*/
+
+#container h1{
+    width: 60%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+/**************Style pour élements formulaire *******/
+
+label{
+    color: #1585dc;
+    /*font-family: 'Dancing Script', cursive;*/
+    font-weight: bold;
+}
+h2[title="cnx"]{
+    color: #1585dc;
+    font-family: 'Dancing Script', cursive;
+}
+
+/* style pour les zone de saisie du formulaire */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #1585dc;
+    box-sizing: border-box;
+}
+
+/* style pour bouton formulaire*/
+input[type=submit] {
+    background-color: #1585dc;
+    border-radius: 10px;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+input[type=submit]:hover {
+    background-color: white;
+    color: #1585dc;
+    border: 1px solid #1585dc;
+}
+
+
+header[title="listemedicament"]{
+    
+    height: 200px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    background-image: url("../img/med2.jpg");
+    /* positionne et montre le bas de l'image'  */
+    background-origin: content-box;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+   
+}
+
+/* Ajoutez ces styles à votre feuille de style CSS existante */
+
+.medicament-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: left;
+    display: inline-block;
+}
+
+.medicament-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.medicament-card h3 {
+    color: #1585dc;
+    margin-top: 10px;
+}
+
+.medicament-card p {
+    margin: 8px 0;
+}
+/* Styles pour les boutons de filtrage */
+button {
+    padding: 8px 16px;
+    margin-top: 8px;
+    background-color: #007BFF; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Changement de couleur au survol */
+}
+
+/* Styles pour les champs de saisie et les menus déroulants */
+input[type="text"],
+select {
+    padding: 8px;
+    margin-top: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ced4da; /* Couleur de la bordure */
+    border-radius: 4px;
+}
+
+/* Style pour les labels */
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+/* Style pour le conteneur de filtrage */
+div[title="filtrage"] {
+    max-width: 100%;
+    margin: auto;
+    padding: 16px;
+    border: 1px solid #ced4da; /* Couleur de la bordure du conteneur */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Utilisation du style pour l'entête listevisiteursregions */
+header[title="listevisiteursregions"] {
+    height: 200px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    background-image: url("../img/med2.jpg");
+    background-origin: content-box;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.visiteurs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.visiteurs-table th, .visiteurs-table td {
+    border: 1px solid #1585dc;
+    padding: 10px;
+    text-align: center;
+}
+
+.visiteurs-table th {
+    background-color: #1585dc;
+    color: white;
+}
+
+/* Ajoutez d'autres styles selon vos besoins */
+/******************************************/
