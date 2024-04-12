@@ -4,6 +4,7 @@ session_start(); // Ajout de session_start
 require_once 'includes/head.php'; 
 require_once 'mesClasses/CdirecteurRegionales.php';
 require_once 'includes/functions.php';
+require_once 'mesClasses/Cmedicaments.php';
 
 // Assurez-vous que la session contient un objet directeur régional
 $odirecteurregional = isset($_SESSION['directeur_regional']) ? unserialize($_SESSION['directeur_regional']) : null;
@@ -14,6 +15,7 @@ if ($odirecteurregional == NULL) {
 }
 
 $directeursRegionaux = new CdirecteurRegionales(); 
+$oMed = new Cmedicaments ();
 
 $id = $odirecteurregional->getId();
 
@@ -30,6 +32,11 @@ $libelleRegion = $odirecteurregional->getLibelleRegion($id)[0]['Libelle'];
 if(isset($_POST['medicaments'])){
     $_SESSION['med'] = $_POST['medicaments'];
 }
+if(isset($_POST['selectionner']) && isset($_POST['mois']) && isset($_SESSION['med'])){
+    foreach($_POST['selectionner'] as $idUnVisiteur){
+            $oMed->setMedicamentsForVisitor($idUnVisiteur,$_POST['mois'],$_SESSION['med']);
+    }
+}
 ?>
 
 <body>
@@ -43,7 +50,7 @@ if(isset($_POST['medicaments'])){
         if (empty($listeVisiteurs)) {
             echo "<p>Aucun visiteur pour cette région.</p>";
         } else {
-            echo '<form method="post" action="liste_medicament.php">'; // Ajoutez le formulaire autour du tableau
+            echo '<form method="post" action="">'; // Ajoutez le formulaire autour du tableau
             echo '<table class="table table-condensed">
             <thead title="entetetabvisiteur">
                 <tr>
@@ -76,13 +83,9 @@ if(isset($_POST['medicaments'])){
           
             echo "</tbody>";
             echo "</table>";
-            echo '<form method="post" action="produit_attribuer_visiteur.php">';
-            echo '<button type="submit" class="btn btn-primary">Voir et/ou supprimer les affectations</button>';
-            echo '</form>';
-
+            echo '<a href="recapitulatif_affectation_produit.php"><button type="button" class="btn btn-primary">Voir et/ou supprimer les affectations</button></a>';
             // Tableau des 6 prochains mois
             echo "<h2>Période d'affectation des produits</h2>";
-            echo '<form method="post" action="">'; // Ouvrez le formulaire autour du tableau
             echo '<table class="table table-condensed">
             <thead title="entetetabvisiteur">
                 <tr>
@@ -103,7 +106,6 @@ if(isset($_POST['medicaments'])){
             }                       
             echo "</tbody>";
             echo "</table>";
-
             echo '<button type="submit" class="btn btn-primary">Attribuer</button>'; // Ajoutez le bouton de soumission du formulaire
             echo '</form>'; // Fermez le formulaire après le tableau
 

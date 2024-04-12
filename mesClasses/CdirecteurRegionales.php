@@ -9,12 +9,11 @@ require_once 'Cregion.php';
 
 class CdirecteurRegionale extends Cemploye
 {
-    private $idRegion;
 
     function __construct($sid, $slogin, $smdp, $snom, $sprenom, $sville, $sidRegion)
     {
-        parent::__construct($sid, $slogin, $smdp, $snom, $sprenom, $sville);
-        $this->idRegion = $sidRegion;
+        parent::__construct($sid, $slogin, $smdp, $snom, $sprenom, $sville, $sidRegion);
+      
     }
     public function getIdRegion()
     {

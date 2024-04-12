@@ -9,14 +9,16 @@ abstract class Cemploye {
     public $prenom;
     public $connecte;
     public $ville;
+    public $idRegion;
 
-    function __construct($sid, $slogin, $smdp, $snom, $sprenom, $sville) {
+    function __construct($sid, $slogin, $smdp, $snom, $sprenom, $sville, $sidRegion) {
         $this->id = $sid;
         $this->login = $slogin;
         $this->mdp = $smdp;
         $this->nom = $snom;
         $this->prenom = $sprenom;
         $this->ville = $sville;
+        $this->idRegion = $sidRegion;
         $this->connecte = false;   // le visiteur est par défaut non connecté
     }
 

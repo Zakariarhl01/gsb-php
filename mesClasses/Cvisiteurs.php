@@ -10,7 +10,6 @@ require_once 'Cemploye.php';
 class Cvisiteur extends Cemploye
 {
 
-    public $idRegion;
     
     function __construct($sid,$slogin,$smdp,$snom,$sprenom,$sville, $sidRegion)
     {

@@ -9,12 +9,10 @@ require_once 'Cemploye.php';
 class Ccomptable extends Cemploye
 {
 
-    public $idRegion;
 
     function __construct($sid, $slogin, $smdp, $snom, $sprenom, $sville, $sidRegion)
     {
-        parent::__construct($sid, $slogin, $smdp, $snom, $sprenom, $sville);
-        $this->idRegion = $sidRegion;
+        parent::__construct($sid, $slogin, $smdp, $snom, $sprenom, $sville, $sidRegion);
 
     }
 

@@ -11,26 +11,32 @@ if ($odirecteurregional == NULL) {
     header('location:seConnecter.php');
     exit();
 }
-
-
 // Instanciation des objets
 $presenters = new Cpresenters();
 $visiteurs = new Cvisiteurs();
 $directeursRegionaux = new CdirecteurRegionales(); 
 
+$id = $odirecteurregional->getId();
+
+$idRegion = $odirecteurregional->getIdRegion(); // Utilisez la méthode publique pour obtenir la valeur
+
+$listeVisiteurs = $directeursRegionaux->getListeVisiteursRegion($idRegion);
 
 
 // Vérifier si l'ID de la présentation est présent dans l'URL
-if (isset($_GET['idPres'])) {
-try {
-    // Supprimer la présentation avec l'ID spécifié
-    $presenters->deletePresentation($_GET['idPres']);
-    // Redirection vers la même page après la suppression
-    header('Location: recapitulatif_affectation_produit.php');
-    exit(); // Terminer le script après la redirection
-} catch (Exception $ex) {
-    $errorMsg = "La présentation n° " . $_GET['idPres'] . " n'a pas été correctement supprimée.";
-}
+if (isset($_GET['anneeMois']) && isset($_GET['idMed']) && isset($_GET['idVisiteur'])) {
+    try {
+        // Supprimer la présentation avec l'ID spécifié
+        $anneeMois = $_GET['anneeMois'];
+        $idMed = $_GET['idMed'];
+        $idVisiteur = $_GET['idVisiteur'];
+        $presenters->deletePresentation($anneeMois, $idMed, $idVisiteur);
+        // Redirection vers la même page après la suppression
+        header('Location: recapitulatif_affectation_produit.php');
+        exit(); // Terminer le script après la redirection
+    } catch (Exception $ex) {
+        $errorMsg = "La présentation du " . $_GET['anneeMois'] ." pour le médicament ". $_GET['idMed'] . " du visiteur " . $_GET['idVisiteur'] . " n'a pas été correctement supprimée.";
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -62,15 +68,22 @@ try {
             <tbody>
                 <?php foreach ($presenters->getPresentation() as $presentation){ ?>
                 <tr>
+                    <?php 
+                    if($visiteurs->getVisiteurById($presentation->idVisiteur)->idRegion == substr($id,0,1)){
+                    ?>
                     <td><?php echo $visiteurs->getVisiteurById($presentation->idVisiteur)->nom; ?></td>
                     <td><?php echo $visiteurs->getVisiteurById($presentation->idVisiteur)->prenom; ?></td>
                     <td><?php echo $visiteurs->getVisiteurById($presentation->idVisiteur)->idRegion; ?></td>
                     <td><?php echo $presentation->idMed; ?></td>
                     <td><?php echo $presentation->anneeMois; ?></td>
-                    <td><a class="btn" href="recapitulatif_affectation_produit.php?idPres=<?php echo $presentation->idPres; ?>">Supprimer</a></td>
+                    <td><a class="btn" href="recapitulatif_affectation_produit.php?anneeMois=<?php echo $presentation->anneeMois; ?>&idMed=<?php echo $presentation->idMed; ?>&idVisiteur=<?php echo $presentation->idVisiteur; ?>">Supprimer</a></td>
                 </tr>
-                <?php } ?>
+                <?php }} ?>
+                
             </tbody>
+            <tfoot style="height: 50px;">
+
+            </tfoot>
         </table>
     </div>
 </body>

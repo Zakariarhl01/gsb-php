@@ -20,7 +20,7 @@ class Cdao  //classe outil
     {
 
         //$strConnection = 'mysql:host=172.29.0.118;dbname=gsb'; // DSN
-        $strConnection = 'mysql:host=localhost;dbname=gsb_2'; // DSN
+        $strConnection = 'mysql:host=localhost;dbname=gsb'; // DSN
         $arrExtraParam= array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"); // demande format utf-8
         //$pdo = new PDO($strConnection, 'remote_user', 'dxGm8FqWbHL/s0Dv', $arrExtraParam); // Instancie la connexion si base distante remote_user remotepass
         $pdo = new PDO($strConnection, 'root', '', $arrExtraParam);

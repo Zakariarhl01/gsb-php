@@ -153,7 +153,7 @@ class Cmedicaments
     
     
     
-    public function setMedicamentsForVisitor($selectedMois, $visitorId, $selectedMed)
+    public function setMedicamentsForVisitor( $visitorId, $selectedMois, $selectedMed)
     {
         $dao = new Cdao();
         $query = '  INSERT INTO presenter (anneeMois, idMed, idVisiteur) 

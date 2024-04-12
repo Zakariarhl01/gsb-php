@@ -83,6 +83,19 @@ header[title="listevisiteur"]{
     background-size: 100% auto;
    
 }
+header[title="listevisiteursregions"]{
+    
+    height: 200px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    background-image: url("../img/med2.jpg");
+    /* positionne et montre le bas de l'image'  */
+    background-origin: content-box;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+   
+}
 header[title="recapitulatifdesaffectations"]{
     
     height: 200px;
@@ -440,3 +453,80 @@ li {
 
 /* Ajoutez d'autres styles selon vos besoins */
 /******************************************/
+body {
+    padding-top: 60px;
+    font-family: Arial, sans-serif; /* Ajoutez une police de caractères par défaut pour le corps du texte */
+}
+
+.container {
+    margin: auto; /* Centrer le contenu dans la page */
+    width: 80%; /* Ajuster la largeur du contenu */
+}
+
+h1 {
+    color: #1585dc; /* Couleur du titre principal */
+    text-align: center; /* Centrer le titre */
+}
+
+.visiteurs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.visiteurs-table th, .visiteurs-table td {
+    border: 1px solid #ccc; /* Utilisez une couleur de bordure plus légère */
+    padding: 10px;
+    text-align: center;
+}
+
+/* Style pour le bouton "Supprimer" */
+a.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #dc3545; /* Couleur de fond pour le bouton */
+    color: #fff; /* Couleur du texte */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Supprimer le soulignement du lien */
+}
+
+a.btn:hover {
+    background-color: #c82333; /* Changement de couleur au survol */
+}
+
+/* Style pour l'entête du tableau */
+.visiteurs-table th {
+    background-color: #007bff; /* Couleur de fond pour l'entête du tableau */
+    color: #fff; /* Couleur du texte pour l'entête du tableau */
+    padding: 12px 10px; /* Ajuster le rembourrage de l'entête */
+}
+
+/* Assurez-vous d'ajuster les autres sélecteurs CSS en conséquence dans vos fichiers pour qu'ils correspondent à ces styles CSS. */
+
+.visiteurs-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Alterner les couleurs de fond des lignes du tableau */
+}
+
+.visiteurs-table tbody tr:hover {
+    background-color: #e5e5e5; /* Couleur de fond au survol des lignes */
+}
+
+a {
+    color: #1585dc; /* Couleur des liens */
+    text-decoration: none; /* Supprimer le soulignement des liens */
+}
+
+a:hover {
+    text-decoration: underline; /* Souligner les liens au survol */
+}
+
+
+/* Assurez-vous d'ajuster les autres sélecteurs CSS en conséquence dans vos fichiers pour qu'ils correspondent à ces styles CSS. */
+body {
+    max-width: 1500px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}

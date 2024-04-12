@@ -10,16 +10,19 @@
 $oPresenters = new Cpresenters();
 
 // Vérifier si l'ID de la présentation est présent dans l'URL
-if (isset($_GET['idPres'])) {
-try {
-    // Supprimer la présentation avec l'ID spécifié
-    $oPresenters->deletePresentation($_GET['idPres']);
-    // Redirection vers la même page après la suppression
-    header('Location: produit_attribuer_visiteur.php');
-    exit(); // Terminer le script après la redirection
-} catch (Exception $ex) {
-    $errorMsg = "La présentation n° " . $_GET['idPres'] . " n'a pas été correctement supprimée.";
-}
+if (isset($_GET['anneeMois']) && isset($_GET['idMed']) && isset($_GET['idVisiteur'])) {
+    try {
+        // Supprimer la présentation avec l'ID spécifié
+        $anneeMois = $_GET['anneeMois'];
+        $idMed = $_GET['idMed'];
+        $idVisiteur = $_GET['idVisiteur'];
+        $oPresenters->deletePresentation($anneeMois, $idMed, $idVisiteur);
+        // Redirection vers la même page après la suppression
+        header('Location: produit_attribuer_visiteur.php');
+        exit(); // Terminer le script après la redirection
+    } catch (Exception $ex) {
+        $errorMsg = "La présentation du " . $_GET['anneeMois'] ." pour le médicament ". $_GET['idMed'] . " du visiteur " . $_GET['idVisiteur'] . " n'a pas été correctement supprimée.";
+    }
 }
 ?>
 
@@ -47,13 +50,12 @@ try {
     foreach ($presentations as $presentation) {
         ?>
         <tr>
-            <td><?= $presentation->idPres ?></td>
             <td><?= $presentation->anneeMois ?></td>
             <td><?= $presentation->idMed ?></td>
             <td><?= $presentation->idVisiteur ?></td>
             <td>
                 <!-- Utiliser un lien avec un bouton de suppression -->
-                <a href="produit_attribuer_visiteur.php?idPres=<?= $presentation->idPres ?>" class="btn btn-danger" role="button">Supprimer</a>
+                <a href="produit_attribuer_visiteur.php?anneeMois=<?php echo $presentation->anneeMois; ?>&idMed=<?php echo $presentation->idMed; ?>&idVisiteur=<?php echo $presentation->idVisiteur; ?>">Supprimer</a>
             </td>
         </tr>
         <?php
